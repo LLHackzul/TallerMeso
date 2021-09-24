@@ -27,7 +27,7 @@ export class CompareService {
       if(err){
         return;
       }
-      this.http.post('tu api', data, {
+      this.http.post('/', data, {
         headers: new Headers({'Authorization': session.getIdToken().getJwtToken()})
       })
         .subscribe(
@@ -53,7 +53,7 @@ export class CompareService {
       if (!all) {
         urlParam = 'single';
       }
-      this.http.get('tu api' + urlParam + queryParam, {
+      this.http.get('/' + urlParam + queryParam, {
         headers: new Headers({'Authorization': session.getIdToken().getJwtToken()})
       })
         .map(
@@ -84,7 +84,7 @@ export class CompareService {
     this.dataLoadFailed.next(false);
     this.authService.getAuthenticatedUser().getSession((err,session)=>{
       const queryParam = '?accessToken=' + session.getAccessToken().getJwtToken();
-      this.http.delete('tu api'+ queryParam, {
+      this.http.delete('/'+ queryParam, {
         headers: new Headers({'Authorization': session.getIdToken().getJwtToken()})
       })
         .subscribe(

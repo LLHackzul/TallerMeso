@@ -10,8 +10,8 @@ import { User } from './user.model';
 import { CognitoUserPool, CognitoUserAttribute, CognitoUser, AuthenticationDetails, CognitoUserSession } from 'amazon-cognito-identity-js';
 
 const POOL_DATA ={
-  UserPoolId: 'tuGrupodeUsuarios',
-  ClientId: 'tuIdDeCliente',
+  UserPoolId: '/',
+  ClientId: '/',
 };
 const userPool= new CognitoUserPool(POOL_DATA);  
 
