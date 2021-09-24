@@ -27,7 +27,7 @@ export class CompareService {
       if(err){
         return;
       }
-      this.http.post('https://s7t9nys6lh.execute-api.us-east-2.amazonaws.com/dev/comparate', data, {
+      this.http.post('tu api', data, {
         headers: new Headers({'Authorization': session.getIdToken().getJwtToken()})
       })
         .subscribe(
@@ -53,7 +53,7 @@ export class CompareService {
       if (!all) {
         urlParam = 'single';
       }
-      this.http.get('https://s7t9nys6lh.execute-api.us-east-2.amazonaws.com/dev/comparate/' + urlParam + queryParam, {
+      this.http.get('tu api' + urlParam + queryParam, {
         headers: new Headers({'Authorization': session.getIdToken().getJwtToken()})
       })
         .map(
@@ -84,7 +84,7 @@ export class CompareService {
     this.dataLoadFailed.next(false);
     this.authService.getAuthenticatedUser().getSession((err,session)=>{
       const queryParam = '?accessToken=' + session.getAccessToken().getJwtToken();
-      this.http.delete('https://s7t9nys6lh.execute-api.us-east-2.amazonaws.com/dev/comparate/'+ queryParam, {
+      this.http.delete('tu api'+ queryParam, {
         headers: new Headers({'Authorization': session.getIdToken().getJwtToken()})
       })
         .subscribe(
